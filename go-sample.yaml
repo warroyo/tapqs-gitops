@@ -1,0 +1,22 @@
+apiVersion: carto.run/v1alpha1
+kind: Deliverable
+metadata:
+  name: go-sample
+  labels:
+    app.kubernetes.io/part-of: go-sample
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    kapp.k14s.io/app: "1669843622346623921"
+    kapp.k14s.io/association: v1.8f57bcc3b78fd02999147c3849408879
+    app.kubernetes.io/component: deliverable
+    app.tanzu.vmware.com/deliverable-type: web
+spec:
+  params:
+  - name: gitops_ssh_secret
+    value: tapqs-git-secret
+  source:
+    git:
+      url: https://github.com/warroyo/tapqs-gitops.git
+      ref:
+        branch: main
+    subPath: config/default/go-sample
