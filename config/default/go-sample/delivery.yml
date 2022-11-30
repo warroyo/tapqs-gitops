@@ -19,12 +19,17 @@ spec:
       annotations:
         conventions.carto.run/applied-conventions: appliveview-sample/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
+        kapp.k14s.io/identity: v1;default/carto.run/Workload/go-sample;carto.run/v1alpha1
+        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"go-sample","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1669843622346623921","kapp.k14s.io/association":"v1.8f57bcc3b78fd02999147c3849408879"},"name":"go-sample","namespace":"default"},"spec":{"source":{"git":{"ref":{"branch":"master"},"url":"https://github.com/pacphi/go-gin-web-server"}}}}'
+        kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: go-sample
         apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: go-sample
+        kapp.k14s.io/app: "1669843622346623921"
+        kapp.k14s.io/association: v1.8f57bcc3b78fd02999147c3849408879
     spec:
       containers:
       - image: dev.registry.pivotal.io/warroyo/go-sample-default@sha256:c890ccee5052605850766201768263c88f36f3babed8b8e9e05d8326e821df78
