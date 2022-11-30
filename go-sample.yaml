@@ -11,6 +11,7 @@ metadata:
     app.kubernetes.io/component: deliverable
     app.tanzu.vmware.com/deliverable-type: web
     carto.run/workload-name: go-sample
+    carto.run/workload-namespace: default
 spec:
   params:
   - name: gitops_ssh_secret
