@@ -10,6 +10,7 @@ metadata:
     kapp.k14s.io/association: v1.8f57bcc3b78fd02999147c3849408879
     app.kubernetes.io/component: deliverable
     app.tanzu.vmware.com/deliverable-type: web
+    carto.run/workload-name: go-sample
 spec:
   params:
   - name: gitops_ssh_secret
