@@ -21,9 +21,9 @@ spec:
         type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
         location:
           path: "/docs/openapi.json"  # The path to the api documentation
-        owner: default   # The team that owns this
+        owner: default   # The team that owns thi
         description: "api for company app"
-   serviceClaims:
+  serviceClaims:
     - name: db
       ref:
         apiVersion: services.apps.tanzu.vmware.com/v1alpha1
