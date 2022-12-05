@@ -34,7 +34,7 @@ spec:
         kapp.k14s.io/association: v1.4e4231720e63d2e6b46e5ce7602f6040
     spec:
       containers:
-      - image: dev.registry.pivotal.io/warroyo/company-api-default@sha256:5c1ac0e74d4d1ff30c8303d66ee43f1272d99f152b83217a3828f891b2c968a3
+      - image: dev.registry.pivotal.io/warroyo/company-api-default@sha256:9f25a270a96b08c68cdb93d0f3d41b2966517bd26b7793eda381496d39d1ee36
         name: workload
         resources: {}
         securityContext:
