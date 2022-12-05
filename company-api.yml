@@ -10,6 +10,10 @@ metadata:
   name: company-api
   namespace: default
 spec:
+  build:
+    env:
+      - name: BP_KEEP_FILES
+        value: "docs/*"
   source:
     git:
       ref:
