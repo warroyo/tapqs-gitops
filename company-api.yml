@@ -33,4 +33,4 @@ spec:
       ref:
         apiVersion: services.apps.tanzu.vmware.com/v1alpha1
         kind: ResourceClaim
-        name: ack-rds-claim
+        name: mysql-rds-claim
