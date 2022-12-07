@@ -7,8 +7,6 @@ metadata:
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
     apis.apps.tanzu.vmware.com/register-api: "true"
-  annotations:
-    contour.networking.knative.dev/extension-service: "testing-service"
   name: company-api
   namespace: default
 spec:
@@ -22,6 +20,9 @@ spec:
         branch: main
       url: https://github.com/warroyo/tap-go-sample
   params:
+    - name: annotations
+      value:
+        contour.networking.knative.dev/extension-service: "testing-service"
     - name: api_descriptor
       value:
         type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
