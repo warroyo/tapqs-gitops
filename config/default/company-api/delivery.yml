@@ -10,6 +10,7 @@ metadata:
     app.kubernetes.io/part-of: company-api
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
+    contour.networking.knative.dev/extension-service: testing-service
     kapp.k14s.io/app: "1669843622346623921"
     kapp.k14s.io/association: v1.4e4231720e63d2e6b46e5ce7602f6040
     app.kubernetes.io/component: run
