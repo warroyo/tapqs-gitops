@@ -22,7 +22,7 @@ spec:
   params:
     - name: annotations
       value:
-        contour.networking.knative.dev/extension-service: "testing-service"
+        contour.networking.knative.dev/extension-service: "htpasswd"
     - name: api_descriptor
       value:
         type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
