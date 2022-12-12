@@ -20,7 +20,7 @@ spec:
         branch: main
       url: https://github.com/warroyo/tap-go-sample
   params:
-    - name: annotations
+    - name: ksvc_annotations
       value:
         contour.networking.knative.dev/extension-service: "htpasswd"
     - name: api_descriptor
