@@ -2,9 +2,10 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: company-api
-  annotations:
+  annotations: |
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+    contour.networking.knative.dev/extension-service: htpasswd
   labels:
     apis.apps.tanzu.vmware.com/register-api: "true"
     app.kubernetes.io/part-of: company-api
