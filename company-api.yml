@@ -23,6 +23,7 @@ spec:
     - name: ksvc_annotations
       value:
         contour.networking.knative.dev/extension-service: "htpasswd"
+        contour.networking.knative.dev/extension-service-namespace: "projectcontour-auth"
     - name: api_descriptor
       value:
         type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
