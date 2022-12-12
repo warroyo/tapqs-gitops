@@ -6,6 +6,7 @@ metadata:
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
     contour.networking.knative.dev/extension-service: htpasswd
+    contour.networking.knative.dev/extension-service-namespace: projectcontour-auth
   labels:
     apis.apps.tanzu.vmware.com/register-api: "true"
     app.kubernetes.io/part-of: company-api
