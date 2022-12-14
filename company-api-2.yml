@@ -1,0 +1,37 @@
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: company-api
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    apis.apps.tanzu.vmware.com/register-api: "true"
+  name: company-api-img
+  namespace: default
+spec:
+  build:
+    env:
+      - name: BP_KEEP_FILES
+        value: "docs/*"
+  source:
+    image: dev.registry.pivotal.io/warroyo/test-imgpkg@sha256:8429e32b38c225fa79e4341787046512539a90a20e56e8ac35b69730e41078b9
+  params:
+    - name: ksvc_annotations
+      value:
+        contour.networking.knative.dev/extension-service: "htpasswd"
+        contour.networking.knative.dev/extension-service-namespace: "projectcontour-auth"
+    - name: api_descriptor
+      value:
+        type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
+        system: test-installation
+        location:
+          path: "/docs/openapi.json"  # The path to the api documentation
+        owner: default   # The team that owns thi
+        description: "api for company app"
+  serviceClaims:
+    - name: db
+      ref:
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ResourceClaim
+        name: mysql-rds-claim
