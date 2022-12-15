@@ -13,7 +13,7 @@ spec:
   name: htpasswd
   service:
     apiVersion: v1
-    kind: secret
+    kind: Secret
     name: htpasswd
   workload:
     apiVersion: serving.knative.dev/v1
