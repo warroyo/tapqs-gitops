@@ -1,7 +1,7 @@
 apiVersion: servicebinding.io/v1alpha3
 kind: ServiceBinding
 metadata:
-  name: go-sample2-mysecretkey
+  name: go-sample2-htpasswd
   annotations: {}
   labels:
     app.kubernetes.io/part-of: go-sample
@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/component: run
     carto.run/workload-name: go-sample2
 spec:
-  name: mysecretkey
+  name: htpasswd
   service:
     apiVersion: v1
     kind: secret
