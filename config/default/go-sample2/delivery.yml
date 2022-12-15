@@ -1,18 +1,25 @@
-apiVersion: serving.knative.dev/v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: go-sample2
-  annotations:
-    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
-    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+  annotations: null
+  kapp.k14s.io/update-strategy: fallback-on-replace
+  ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
   labels:
     app.kubernetes.io/part-of: go-sample
     apps.tanzu.vmware.com/has-tests: "true"
-    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/workload-type: server-with-volumes
     app.kubernetes.io/component: run
     carto.run/workload-name: go-sample2
 spec:
-  template:
+  selector: null
+  matchLabels:
+    app.kubernetes.io/component: run
+    app.kubernetes.io/part-of: go-sample
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    carto.run/workload-name: go-sample2
+  template: |
     metadata:
       annotations:
         conventions.carto.run/applied-conventions: appliveview-sample/app-live-view-appflavour-check
@@ -30,5 +37,37 @@ spec:
         resources: {}
         securityContext:
           runAsUser: 1000
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-vol
       serviceAccountName: default
+      volumes:
+      - configMap:
+          items:
+          - key: log_level
+            path: log_level
+          name: log-config
+        name: config-vol
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-sample2
+  labels:
+    app.kubernetes.io/part-of: go-sample
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: server-with-volumes
+    app.kubernetes.io/component: run
+    carto.run/workload-name: go-sample2
+spec:
+  selector:
+    app.kubernetes.io/component: run
+    app.kubernetes.io/part-of: go-sample
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    carto.run/workload-name: go-sample2
+  ports:
+  - targetPort: 8080
+    port: 8080
+    name: http
 
