@@ -17,7 +17,7 @@ spec:
     app.kubernetes.io/component: run
     app.kubernetes.io/part-of: go-sample
     apps.tanzu.vmware.com/has-tests: "true"
-    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/workload-type: server-with-volumes
     carto.run/workload-name: go-sample2
   template: |
     metadata:
@@ -28,7 +28,7 @@ spec:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: go-sample
         apps.tanzu.vmware.com/has-tests: "true"
-        apps.tanzu.vmware.com/workload-type: web
+        apps.tanzu.vmware.com/workload-type: server-with-volumes
         carto.run/workload-name: go-sample2
     spec:
       containers:
@@ -64,7 +64,7 @@ spec:
     app.kubernetes.io/component: run
     app.kubernetes.io/part-of: go-sample
     apps.tanzu.vmware.com/has-tests: "true"
-    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/workload-type: server-with-volumes
     carto.run/workload-name: go-sample2
   ports:
   - targetPort: 8080
