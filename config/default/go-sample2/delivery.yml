@@ -19,7 +19,7 @@ spec:
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: server-with-volumes
     carto.run/workload-name: go-sample2
-  template: |
+  template:
     metadata:
       annotations:
         conventions.carto.run/applied-conventions: appliveview-sample/app-live-view-appflavour-check
