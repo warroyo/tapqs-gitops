@@ -30,6 +30,7 @@ spec:
         secret-name: ado-token
         org-name: warroyo-tanzu
         pipeline-id: 2
+        pipeline-params: "{\"newparam\": \"testing\"}"
     - name: api_descriptor
       value:
         type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
