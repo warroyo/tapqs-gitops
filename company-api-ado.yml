@@ -1,0 +1,40 @@
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: company-api-ado
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    apis.apps.tanzu.vmware.com/register-api: "true"
+  name: company-api-do
+  namespace: default
+spec:
+  build:
+    env:
+      - name: BP_KEEP_FILES
+        value: "docs/*"
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/warroyo/tap-go-sample
+  params:
+    - name: testing_pipeline_matching_labels
+      value:
+        apps.tanzu.com/pipeline: ado-pipeline
+    - name: testing_pipeline_params
+      value:
+        project-name: tap-testing
+        #! Required: The secret created earlier to access Jenkins
+        secret-name: ado-token
+        org-name: warroyo-tanzu
+        pipeline-id: 2
+    - name: api_descriptor
+      value:
+        type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
+        system: test-installation
+        location:
+          path: "/docs/openapi.json"  # The path to the api documentation
+        owner: default   # The team that owns thi
+        description: "api for company app"
