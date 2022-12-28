@@ -25,11 +25,11 @@ spec:
         apps.tanzu.vmware.com/pipeline: ado-pipeline
     - name: testing_pipeline_params
       value:
-        project-name: tap-testing
+        project-name: tap-ado-blog
         #! Required: The secret created earlier to access Jenkins
         secret-name: ado-token
         org-name: warroyo-tanzu
-        pipeline-id: 2
+        pipeline-id: 4
         pipeline-params: "{\"newparam\": \"testing\"}"
     - name: api_descriptor
       value:
