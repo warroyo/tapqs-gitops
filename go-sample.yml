@@ -14,3 +14,8 @@ spec:
       ref:
         branch: master
       url: https://github.com/pacphi/go-gin-web-server
+  params:
+    - name: annotations
+      value:
+        autoscaling.knative.dev/min-scale: "1"
+        linkerd.io/inject: enabled
