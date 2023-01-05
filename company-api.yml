@@ -20,6 +20,10 @@ spec:
         branch: main
       url: https://github.com/warroyo/tap-go-sample
   params:
+    - name: annotations
+      value:
+        autoscaling.knative.dev/min-scale: "1"
+        linkerd.io/inject: enabled
     - name: ksvc_annotations
       value:
         contour.networking.knative.dev/extension-service: "htpasswd"
