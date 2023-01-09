@@ -28,7 +28,7 @@ spec:
         carto.run/workload-name: company-api-htpass
     spec:
       containers:
-      - image: dev.registry.pivotal.io/warroyo/company-api-htpass-default@sha256:2e60bd5f74f179aeeb3d8cacb0cfecc7d1ac37eaba6939dace3b578f6f2b1f48
+      - image: dev.registry.pivotal.io/warroyo/company-api-htpass-default@sha256:b8c09aa8f4d303089df56a7ab5b59f863c1dbcbe08f780b7f5b07ce6b42512ee
         name: workload
         resources: {}
         securityContext:
