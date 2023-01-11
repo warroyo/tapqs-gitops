@@ -22,7 +22,10 @@ spec:
   template:
     metadata:
       annotations:
-        conventions.carto.run/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        conventions.carto.run/applied-conventions: |-
+          spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/app-live-view-appflavour-check
+          appliveview-sample/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -32,7 +35,7 @@ spec:
         carto.run/workload-name: go-sample2
     spec:
       containers:
-      - image: dev.registry.pivotal.io/warroyo/go-sample2-default@sha256:c890ccee5052605850766201768263c88f36f3babed8b8e9e05d8326e821df78
+      - image: dev.registry.pivotal.io/warroyo/go-sample2-default@sha256:3d8dfcbd721d2b8cbabafc39165240aa07f3a2630a0fcc6af4ec2c16befe6966
         name: workload
         resources: {}
         securityContext:
