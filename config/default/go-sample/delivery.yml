@@ -37,7 +37,7 @@ spec:
         kapp.k14s.io/association: v1.8f57bcc3b78fd02999147c3849408879
     spec:
       containers:
-      - image: dev.registry.pivotal.io/warroyo/go-sample-default@sha256:6c512250ddff5d0c3c49b2bc6236b08923fa50f2d932a588ac4e509511666286
+      - image: dev.registry.pivotal.io/warroyo/go-sample-default@sha256:6d18a5e4ae98d2de6300615a3c57aef17243ba29f7acf91deeb3c7e5627fe0df
         name: workload
         resources: {}
         securityContext:
