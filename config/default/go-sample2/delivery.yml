@@ -35,7 +35,7 @@ spec:
         carto.run/workload-name: go-sample2
     spec:
       containers:
-      - image: dev.registry.pivotal.io/warroyo/go-sample2-default@sha256:3d8dfcbd721d2b8cbabafc39165240aa07f3a2630a0fcc6af4ec2c16befe6966
+      - image: dev.registry.pivotal.io/warroyo/go-sample2-default@sha256:a460b260770f65422359ce0b67225b66c26babfb14e5bb4015e6b866270c001d
         name: workload
         resources: {}
         securityContext:
